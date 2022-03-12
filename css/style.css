@@ -740,3 +740,33 @@ textarea {
   opacity: 1;
   transform: rotateZ(-2deg);
 }
+
+
+
+
+
+
+
+
+
+
+/*slide*/
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px){
+ 
+}
+
+
+ /* Media Query for Tablets Ipads portrait mode */
+@media (max-width: 1025px){
+  
+}
+
+
+/*canvas*/
+canvas{
+      position:absolute;
+      left:0;
+      top:0;
+      z-index:-1;
+    }
