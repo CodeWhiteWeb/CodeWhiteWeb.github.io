@@ -142,7 +142,7 @@ var layers = {
     coef: [0.1, 0.2, 0.4, 0.6, 0.8], //how much the letters move from the mouse (starting from the deepest layer)
     size: [16, 22, 36, 40, 46], //font size of the letters (starting from the deepest layer)
     color: ['#B3B3B3','#282828', '#181818', '#121212', '#101010'], //color of the letters (starting from the deepest layer)
-    font: 'Courier' //font family (of every layer)
+    font: 'Teko' //font family (of every layer)
 };
 
 
