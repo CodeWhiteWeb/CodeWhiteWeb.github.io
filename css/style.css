@@ -753,20 +753,20 @@ textarea {
 /*slide*/
 /* Media Query for Laptops and Desktops */
 @media (min-width: 1025px){
- 
+
+canvas{
+      position:absolute;
+      left:0;
+      top:0;
+      z-index:-1;
+    } 
 }
 
 
  /* Media Query for Tablets Ipads portrait mode */
 @media (max-width: 1025px){
   
-}
-
-
-/*canvas*/
 canvas{
-      position:absolute;
-      left:0;
-      top:0;
-      z-index:-1;
+      display: none;
     }
+}

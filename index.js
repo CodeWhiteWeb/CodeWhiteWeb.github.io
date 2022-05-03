@@ -247,4 +247,3 @@ document.getElementById('close').onclick = function() {
     this.parentElement.style.visibility = 'hidden';
     this.parentElement.style.opacity = '0';
 }
-
