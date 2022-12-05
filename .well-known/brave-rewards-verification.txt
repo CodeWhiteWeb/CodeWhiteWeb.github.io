@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: codewhiteweb.cf
+Token: 55333084e45fce109015bfa393561641a8a757b3f84804fe6a11c0bc9f73c66f
