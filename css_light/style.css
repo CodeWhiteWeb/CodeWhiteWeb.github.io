@@ -4,10 +4,10 @@
 :root {
   --header-height: 3rem;
   /*===== Colores =====*/
-  --first-color: #9d8bda;
-  --dark-color: #212529;
-  --dark-color-alt: #282B3A;
-  --white-color: #ffffff;
+  --first-color: #4271ff;
+  --dark-color: #ffffff;
+  --dark-color-alt: #e1e1e1;
+  --white-color: #000000;
   --footer-color: #000000;
   --footer-text-colot: #ffffff;
   /*===== Fuente y tipografia =====*/
@@ -337,9 +337,6 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -663,13 +660,13 @@ img {
 }
 
 .footer .foot .row .contant3 p {
+  color: var(--footer-text-colot);
   padding: 0;
   margin: 0;
-  color: var(--first-color);
 }
 
 .footer .foot .row .contant3 ul .active {
-  color: var(--white-color);
+  color: var(--first-color);
   font-size: 16px;
   font-weight: bold;
   margin-bottom: .5rem;
