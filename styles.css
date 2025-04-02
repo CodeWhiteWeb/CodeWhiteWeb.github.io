@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+* {
+    font-family: 'Syne', sans-serif;
+    text-shadow: -1px -1px 0 rgba(50, 50, 50, 0.6),  
+              1px -1px 0 rgba(50, 50, 50, 0.6),  
+             -1px  1px 0 rgba(50, 50, 50, 0.6),  
+              1px  1px 0 rgba(50, 50, 50, 0.6);
+}
+
+body {
+    margin: 0;
+    overflow: hidden; 
+    background-color: #87CEEB;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x; 
+}
+
+.content {
+    display: flex;
+    height: 100vh;
+    white-space: nowrap;
+    will-change: transform;
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    scrollbar-width: thin;
+}
+
+
+@media (max-width: 768px) {
+    .content {
+        scroll-snap-type: x mandatory;
+    }
+
+    .section {
+        scroll-snap-align: start;
+    }
+}
+
+
+.content::-webkit-scrollbar {
+    height: 8px; 
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+.parallax-layer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-size: auto 100vh;
+    background-repeat: repeat-x;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    will-change: transform;
+}
+
+.layer-1 { background-image: url('assets/city_parallax/1.png'); }
+.layer-2 { background-image: url('assets/city_parallax/2.png'); }
+.layer-3 { background-image: url('assets/city_parallax/3.png'); }
+.layer-4 { background-image: url('assets/city_parallax/4.png'); }
+.layer-5 { background-image: url('assets/city_parallax/5.png'); }
+.layer-6 { background-image: url('assets/city_parallax/6.png'); }
+
+.section {
+    flex: 0 0 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(39, 132, 253, 0.2);
+    backdrop-filter: blur(3px);
+    z-index: -1;
+}
+
+.section {
+    flex: 0 0 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+}
+
+@media (max-width: 768px) {
+    .parallax-layer {
+        display: none;
+    }
+
+    body {
+        background-image: url('assets/city_parallax/10.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.scroll-hint {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.arrow {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.arrow-1, .arrow-2 {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    animation: blinkAlternate 1s infinite alternate;
+}
+
+.arrow-2 {
+    animation-delay: 0.5s;
+}
+
+@keyframes blinkAlternate {
+    0% { opacity: 0.2; text-shadow: 0px 0px 5px rgba(0, 255, 255, 1); }
+    100% { opacity: 1; text-shadow: 0px 0px 10px rgba(248, 248, 248, 1); }
+}
+
+.home-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.pfp {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.big-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.small-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.smaller-text {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.stats-about-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch; 
+    max-width: 90%;
+    margin: auto;
+    gap: 5px;
+    flex-wrap: nowrap;
+}
+
+.stats-list {
+    display: flex;
+    flex-direction: column;  
+    justify-content: space-evenly;  
+    align-items: center;  
+    height: 100%;  
+    padding: 20px;  
+}
+
+
+.stat-box, .about-box {
+    background: rgba(54, 54, 54, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    width: auto;
+    max-width: 45%;
+    min-width: 300px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+.stat-item {
+    display: flex;  
+    align-items: center;  
+    gap: 10px;  
+    text-align: left; 
+}
+
+
+.stat-box p, .about-box p {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #ffffff;
+    text-align: left;
+    margin: 5px 0;
+    white-space: normal; 
+}
+
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: left;
+}
+
+.skills-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.skills-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 30px;
+}
+
+.skills-category {
+    flex: 1;
+    text-align: center;
+    max-width: 100%; /* Ensure each partition gets equal space */
+}
+
+.skills-category h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Spreads items evenly */
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    min-height: 300px; /* Ensures enough space for multiple rows */
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+    flex: 1 1 calc(33.33% - 20px); /* Adjusts size based on available space */
+    max-width: 150px; /* Ensures icons don’t stretch too much */
+}
+
+.skill-icon img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.skill-icon:hover {
+    transform: scale(1.1);
+}
+
+.skill-name {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 10;
+}
+
+.skill-icon:hover .skill-name {
+    opacity: 1;
+}
+
+/* Contact Section */
+/* Contact Section */
+#contact {
+    padding: 50px;
+    text-align: center;
+    /* background-color: #11111173; */
+    color: white;
+}
+
+/* Contact Form Wrapper */
+.contact-form {
+    background: rgba(110, 108, 108, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.4);
+    width: auto;
+    max-width: 75%;
+    min-width: 900px;
+    margin: auto;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.contact-form:hover {
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.6);
+    transform: scale(1.02);
+}
+
+/* Form Elements */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Input Fields */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+/* Glowing Effect on Focus */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Placeholder Text */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+/* Send Button */
+.contact-form button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+.contact-form button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+}
