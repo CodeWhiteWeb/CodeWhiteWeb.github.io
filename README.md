@@ -15,8 +15,8 @@
 
 ## In development 
 - ⚡️ Responsive (in work) 
-- ⚡️ Horizontal scrolling 
-- ⚡️ parallax images, cityscape with layers moving in different spead 
+- ⚡️ ~~Horizontal scrolling~~
+- ⚡️ ~~parallax images, cityscape with layers moving in different spead~~
 
 ## License 📄
 This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
