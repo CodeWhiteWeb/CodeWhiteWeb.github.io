@@ -1,22 +1,59 @@
-# Horizontal Endless Cityscape parallax Website ⚡️ 
+# 🌆 Horizontal Endless Cityscape Parallax Portfolio
 
-### A Simple not-so-classic Portfolio website of a Simple classic developer!
+Welcome to my portfolio website!  
+A unique, horizontally scrolling cityscape with parallax effects, built to showcase creativity, skills, and projects in a visually stunning way.
 
-> https://CodeWhiteWeb.thedev.id
+> **Live Demo:** [https://CodeWhiteWeb.thedev.id](https://CodeWhiteWeb.thedev.id)
 
 ![GitHub stars](https://img.shields.io/github/stars/CodeWhiteWeb/CodeWhiteWeb.github.io) 
 ![GitHub forks](https://img.shields.io/github/forks/CodeWhiteWeb/CodeWhiteWeb.github.io)
 [![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/CodeWhiteWeb/CodeWhiteWeb.github.io/commits/master)
 [![Website shields.io](https://img.shields.io/badge/website-up-yellow)](http://CodeWhiteWeb.github.io/)
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
+---
 
-:star: Star me on GitHub — it helps! (not really but ... yeah what's the big deal)
+## ✨ Features
 
-## In development 
-- ⚡️ Responsive (in work) 
-- ⚡️ ~~Horizontal scrolling~~
-- ⚡️ ~~parallax images, cityscape with layers moving in different spead~~
+- **Horizontal Scroll:** Navigate through sections with smooth horizontal scrolling.
+- **Endless Parallax Cityscape:** Multi-layered cityscape background with seamless parallax animation.
+- **Responsive Design:** Looks great on desktop and mobile devices.
+- **Modern Portfolio Sections:** About, Skills, Projects, and Contact—all in one place.
+- **Animated UI:** Subtle animations and interactive elements for a lively experience.
 
-## License 📄
-This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
+---
+
+## 🚀 Use This Template
+
+Want to build your own cityscape portfolio?  
+Check out the template I created for this website and start your own journey:
+
+👉 **[Cityscape Horizontal Website Template](https://github.com/CodeWhiteWeb/cityscape-horizontal-website-template)**
+
+- Easy to customize
+- Modern, clean codebase
+- Ready-to-use parallax backgrounds
+
+---
+
+## 🛠️ Tech Stack
+
+- **HTML5, CSS3, JavaScript**
+- Custom parallax engine (no heavy frameworks)
+- Responsive, mobile-first design
+
+---
+
+## 📬 Contact
+
+Feel free to reach out via the contact form on the website or email:  
+**web.codewhite@gmail.com**
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE.md](./LICENSE) file for details.
+
+---
+
+:star: If you like this project, please consider starring the repo!
