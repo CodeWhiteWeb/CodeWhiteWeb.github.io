@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
 * {
     font-family: 'Syne', sans-serif;
-    text-shadow: -1px -1px 0 rgba(50, 50, 50, 0.6),  
-              1px -1px 0 rgba(50, 50, 50, 0.6),  
-             -1px  1px 0 rgba(50, 50, 50, 0.6),  
-              1px  1px 0 rgba(50, 50, 50, 0.6);
-              user-select: none;
-              -webkit-user-drag: none;
-              -webkit-touch-callout: none;
 }
 
 body {
@@ -27,18 +20,6 @@ body {
     overflow-y: hidden; 
     scrollbar-width: thin;
 }
-
-
-@media (max-width: 768px) {
-    .content {
-        scroll-snap-type: x mandatory;
-    }
-
-    .section {
-        scroll-snap-align: start;
-    }
-}
-
 
 .content::-webkit-scrollbar {
     height: 8px; 
@@ -75,8 +56,11 @@ body {
     align-items: center;
     justify-content: center;
     scroll-snap-align: start;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    padding: 20px;
 }
-
 
 .overlay {
     position: fixed;
@@ -87,30 +71,6 @@ body {
     background: rgba(39, 132, 253, 0.2);
     backdrop-filter: blur(3px);
     z-index: -1;
-}
-
-.section {
-    flex: 0 0 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    scroll-snap-align: start;
-}
-
-@media (max-width: 768px) {
-    .parallax-layer {
-        display: none;
-    }
-
-    body {
-        background-image: url('assets/city_parallax/10.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        position: relative;
-        overflow-y: auto; 
-    }
 }
 
 .scroll-hint {
@@ -190,7 +150,7 @@ body {
     display: flex;
     flex-direction: column;  
     justify-content: space-evenly;  
-    align-items: center;  
+    align-items: left;  
     height: 100%;  
     padding: 20px;  
 }
@@ -232,6 +192,77 @@ body {
     white-space: normal; 
 }
 
+.about-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85em 2em;
+    font-size: 1.08rem;
+    border: none;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.10);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18), 0 1.5px 8px 0 rgba(255,255,255,0.12) inset;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
+    cursor: pointer;
+    min-width: 180px;
+    position: relative;
+    margin: 0;
+    letter-spacing: 0.02em;
+    outline: none;
+    border: 1.5px solid rgba(255,255,255,0.18);
+}
+
+.about-btn:hover, .about-btn:focus {
+    background: rgba(255,255,255,0.22);
+    color: #fff;
+    box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.22), 0 2px 12px 0 rgba(255,255,255,0.18) inset;
+    border: 1.5px solid #fff;
+}
+
+.download-btn .download-icon {
+    width: 1.2em;
+    height: 1.2em;
+    margin-left: 0.7em;
+    display: inline-block;
+    vertical-align: middle;
+    filter: brightness(2) drop-shadow(0 0 2px #fff);
+    transition: filter 0.2s;
+}
+
+.download-btn:hover .download-icon,
+.download-btn:focus .download-icon {
+    filter: brightness(3) drop-shadow(0 0 4px #fff);
+}
+
+.about-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.1rem;
+    margin-top: 1.2rem;
+    width: 100%;
+}
+
+@media (max-width: 500px) {
+    .about-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+    .about-btn {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        font-size: 1rem;
+        padding: 0.85em 1em;
+    }
+}
 
 h2 {
     font-size: 28px;
@@ -251,18 +282,10 @@ h2 {
     flex-wrap: wrap;
 }
 
-.skills-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 40px;
-    gap: 30px;
-}
-
 .skills-category {
     flex: 1;
     text-align: center;
-    max-width: 100%; /* Ensure each partition gets equal space */
+    max-width: 100%;
 }
 
 .skills-category h2 {
@@ -274,11 +297,11 @@ h2 {
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly; /* Spreads items evenly */
+    justify-content: space-evenly;
     align-items: center;
     gap: 20px;
     padding-top: 20px;
-    min-height: 300px; /* Ensures enough space for multiple rows */
+    min-height: 300px;
 }
 
 .skill-icon {
@@ -293,8 +316,9 @@ h2 {
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
     overflow: hidden;
-    flex: 1 1 calc(33.33% - 20px); /* Adjusts size based on available space */
-    max-width: 150px; /* Ensures icons don’t stretch too much */
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: 150px;
+    position: relative;
 }
 
 .skill-icon img {
@@ -328,35 +352,31 @@ h2 {
 }
 
 /* Contact Section */
-/* Contact Section */
 #contact {
     padding: 50px;
     text-align: center;
-    /* background-color: #11111173; */
     color: white;
 }
 
-/* Contact Form Wrapper */
 .contact-form {
     background: rgba(110, 108, 108, 0.2);
     border-radius: 15px;
     padding: 20px;
     backdrop-filter: blur(5px);
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.4);
-    width: auto;
-    max-width: 75%;
-    min-width: 500px;
+    width: 100%;
+    max-width: 600px;
+    min-width: 340px;
     margin: auto;
     transition: 0.3s ease-in-out;
+    box-sizing: border-box;
 }
 
-/* Hover Effect */
 .contact-form:hover {
     box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.6);
     transform: scale(1.02);
 }
 
-/* Form Elements */
 .contact-form form {
     display: flex;
     flex-direction: column;
@@ -365,7 +385,6 @@ h2 {
     text-align: left;
 }
 
-/* Input Fields */
 .contact-form input,
 .contact-form textarea {
     width: 95%;
@@ -382,20 +401,17 @@ h2 {
     transition: 0.3s ease-in-out;
 }
 
-/* Glowing Effect on Focus */
 .contact-form input:focus,
 .contact-form textarea:focus {
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* Placeholder Text */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     color: rgb(255, 255, 255);
 }
 
-/* Send Button */
 .contact-form button {
     background: rgba(255, 255, 255, 0.2);
     color: white;
@@ -407,8 +423,239 @@ h2 {
     transition: 0.3s ease-in-out;
 }
 
-/* Button Hover Effect */
 .contact-form button:hover {
     background: rgba(255, 255, 255, 0.4);
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+}
+
+.parallax-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: -2;
+    pointer-events: none;
+}
+
+.download-icon {
+    height: 1em;
+    width: 1em;
+    min-width: 1em;
+    min-height: 1em;
+    max-width: 1.3em;
+    max-height: 1.3em;
+    margin-left: 0.6em;
+    display: inline-block;
+    vertical-align: middle;
+    object-fit: contain;
+}
+
+/* --- Combined Mobile Styles --- */
+@media (max-width: 768px) {
+    .parallax-layer {
+        display: none;
+    }
+    body {
+        background-image: url('assets/city_parallax/10.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        overflow-y: auto; 
+    }
+    .content {
+        scroll-snap-type: x mandatory;
+    }
+    .section {
+        scroll-snap-align: start;
+        padding: 20px;
+        height: auto;
+        min-height: 100vh;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        min-width: 100vw;
+        max-width: 100vw;
+    }
+    .stats-about-container {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+        padding: 10px;
+        max-width: 100vw;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+    .stat-box, .about-box {
+        width: 100%;
+        min-width: unset;
+        max-width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .stat-item {
+        margin-bottom: 15px;
+    }
+    .contact-form {
+        width: 100%;
+        min-width: 0;
+        max-width: 100vw;
+        margin: 10px 0;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        box-sizing: border-box;
+        margin-right: 0;
+    }
+    .home-section {
+        padding: 20px;
+        height: auto;
+        max-width: 100vw;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+    .pfp {
+        width: 120px;
+        height: 120px;
+    }
+    h2 {
+        font-size: 24px;
+        text-align: center;
+        margin: 10px 0;
+    }
+    p {
+        white-space: normal;
+        word-wrap: break-word;
+    }
+    .big-text {
+        font-size: 1.8rem;
+        padding: 0 10px;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+    .small-text {
+        font-size: 1.2rem;
+        padding: 0 15px;
+        white-space: normal;
+    }
+    .smaller-text {
+        font-size: 0.9rem;
+        padding: 0 20px;
+        white-space: normal;
+    }
+    /* Skills section: horizontal scroll, categories side by side */
+    #Skills.section {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        height: 100vh;
+        min-height: 100vh;
+        width: 100vw;
+        position: relative;
+        max-width: 100vw;
+        white-space: nowrap;
+    }
+    .skills-section {
+        position: relative;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        min-height: 320px;
+        height: auto;
+        max-height: 80vh;
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        width: max-content;
+        min-width: 100vw;
+        max-width: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 10px 0;
+        white-space: nowrap;
+    }
+    .skills-category {
+        min-width: 320px;
+        max-width: 340px;
+        width: 90vw;
+        margin: 0 10px;
+        display: inline-block;
+        vertical-align: top;
+        white-space: normal;
+        padding: 10px 0;
+    }
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        padding: 10px 0;
+        min-height: unset;
+        overflow: visible;
+        width: 100%;
+    }
+    .skill-icon {
+        width: 45px;
+        height: 45px;
+        margin: 5px auto;
+        flex: none;
+    }
+    /* Skills Section Arrow Buttons - Mobile Only */
+    .skills-scroll-arrow {
+        display: flex;
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+        width: 54px;
+        height: 54px;
+        background: linear-gradient(135deg, #268fff 60%, #2784fd 100%);
+        border: none;
+        border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 16px 4px #268fff, 0 0 32px 8px #fff3;
+        cursor: pointer;
+        color: #fff;
+        font-size: 2.2rem;
+        opacity: 0.93;
+        transition: background 0.2s, box-shadow 0.2s, opacity 0.2s;
+        pointer-events: auto;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .skills-scroll-arrow.left {
+        left: 8px;
+        border-radius: 0 27px 27px 0 / 0 50% 50% 0;
+        justify-content: flex-start;
+        background: linear-gradient(135deg, #2784fd 60%, #268fff 100%);
+    }
+    .skills-scroll-arrow.right {
+        right: 8px;
+        border-radius: 27px 0 0 27px / 50% 0 0 50%;
+        justify-content: flex-end;
+        background: linear-gradient(225deg, #2784fd 60%, #268fff 100%);
+    }
+    .skills-scroll-arrow svg {
+        width: 28px;
+        height: 28px;
+        filter: drop-shadow(0 0 6px #fff);
+        display: block;
+    }
+    .skills-scroll-arrow:active {
+        opacity: 1;
+        background: #1a6ed8;
+    }
+}
+
+/* Hide arrow buttons on desktop */
+@media (min-width: 769px) {
+    .skills-scroll-arrow {
+        display: none !important;
+    }
 }
