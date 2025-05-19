@@ -1,246 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <title>404 Not Found</title>
-    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
-  </head>
-  <body>
-    <div class="terminal">
-      <div class="terminal__task-bar"> 
-        <span class="terminal__circle terminal__circle--red"></span> 
-        <span class="terminal__circle terminal__circle--yellow"></span> 
-        <span class="terminal__circle terminal__circle--green"></span>
-      </div>
-      <div class="terminal__window">
-        <p class="terminal__prompt">$ <span class="terminal__prompt--typing">
-          <span class="cover cover--gimme-dev"></span>404 ERROR</span>
-        </p>
-        <p class="terminal__prompt terminal__prompt--checkout">Go back home: <span class="terminal__window--highlight">
-          <a href="index.html" target="_blank">Click here For Home</a></span></p><p class="terminal__prompt terminal__prompt--show-contact">$ 
-            <span class="terminal__prompt--typing"><span class="cover cover--show-contact"></span>Stuck here ? mail me</span></p><p class="terminal__prompt terminal__prompt--mail">mail: <span class="terminal__window--highlight"><a href="mailto:web.codewhite@gmail.com">web.codewhite@gmail.com</a>
-            </span>
-            </p>
-      </div>
-    </div> 
+    <title>Page Not Found | CodeWhiteWeb</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
     <style>
-      @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:500');
-*{
-  -webkit-user-select: none; /* Safari */        
--moz-user-select: none; /* Firefox */
--ms-user-select: none; /* IE10+/Edge */
-user-select: none; /* Standard */
-}
-.terminal {
-  font-family: "Source Code Pro", "Monaco", "Courier New", monospace;
-  font-weight: 400;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  position: relative;
-  margin: 0 auto;
-  color: #fff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-@media screen and (min-width: 30rem) {
-  .terminal {
-    font-size: 1.25rem;
-    line-height: 2rem;
-  }
-}
-
-@media screen and (min-width: 60.5rem) {
-  .terminal {
-    max-width: 60.5rem;
-  }
-}
-
-.terminal__task-bar {
-  height: 2rem;
-  padding-left: 0.5rem;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-  background-color: #efefef;
-}
-
-@media screen and (max-width: 30rem) {
-  .terminal__task-bar {
-    padding-top: 0.5rem;
-  }
-}
-
-.terminal__window {
-  height: 17.5rem;
-  padding: 1.5rem;
-  border-bottom-right-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-  background-color: #000;
-}
-
-.terminal__window--highlight {
-  color: #51e05d;
-}
-
-.terminal__circle {
-  position: relative;
-  display: inline-block;
-  width: 0.75rem;
-  height: 0.75rem;
-  margin-right: -0.1875rem;
-  border-radius: 50%;
-}
-
-.terminal__circle--red {
-  background-color: #fb574e;
-}
-
-.terminal__circle--yellow {
-  background-color: #fbbd2e;
-}
-
-.terminal__circle--green {
-  background-color: #51e05d;
-}
-
-.terminal__prompt--checkout, .terminal__prompt--show-contact, .terminal__prompt--mail {
-  opacity: 0;
-}
-
-.terminal__prompt--checkout {
-  animation: show-checkout 16s infinite;
-}
-
-.terminal__prompt--show-contact {
-  animation: show-show-contact 16s infinite;
-}
-
-.terminal__prompt--mail {
-  animation: show-mail 16s infinite;
-}
-
-.terminal__prompt--typing {
-  position: relative;
-}
-
-.terminal__prompt--typing .cover {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  display: inline-block;
-  box-sizing: border-box;
-  height: 100%;
-  background: #000;
-  border-left: 1px solid #fff;
-}
-
-.terminal__prompt--typing .cover--gimme-dev {
-  animation: typing-gimme-dev 16s steps(19, end) infinite;
-}
-
-.terminal__prompt--typing .cover--show-contact {
-  animation: typing-show-contact 16s steps(19, end) infinite;
-}
-
-@keyframes typing-gimme-dev {
-  0% {
-    width: 100%;
-    opacity: 1;
-  }
-  12% {
-    width: 0;
-  }
-  15% {
-    opacity: 1;
-  }
-  16% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes typing-show-contact {
-  0%,
-  35% {
-    width: 100%;
-  }
-  47%,
-  100% {
-    width: 0;
-  }
-  48% {
-    opacity: 1;
-  }
-  49% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes show-checkout {
-  0%,
-  20% {
-    opacity: 0;
-  }
-  25%,
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes show-mail {
-  0%,
-  55% {
-    opacity: 0;
-  }
-  60%,
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes show-uploaded {
-  0%,
-  63% {
-    opacity: 0;
-  }
-  68%,
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes show-show-contact {
-  0%,
-  28% {
-    opacity: 0;
-  }
-  32%,
-  100% {
-    opacity: 1;
-  }
-}
-
-body {
-  background: #383838;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-a:hover, a:focus, a:active {
-  color: #0091eb;
-  text-decoration: underline;
-}
+        body {
+            overflow: hidden;
+            background: #87CEEB url('assets/city_parallax/10.png') center center no-repeat;
+            background-size: cover;
+            min-height: 100vh;
+            font-family: 'Syne', 'Poppins', Arial, sans-serif;
+        }
+        .center-container-404 {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .error-title-404 {
+            font-size: 5rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: #fff;
+            text-shadow: 0 4px 32px #2784fd, 0 0 8px #fff;
+            margin-bottom: 0.3em;
+        }
+        .error-desc-404 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #e3e9ff;
+            margin-bottom: 1.2em;
+            text-shadow: 0 2px 8px #2784fd99;
+        }
+        .error-btn-404 {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7em;
+            padding: 0.9em 2.2em;
+            font-size: 1.15rem;
+            font-weight: 700;
+            border-radius: 18px;
+            background: rgba(39,132,253,0.18);
+            color: #fff;
+            border: 1.5px solid rgba(255,255,255,0.18);
+            text-decoration: none;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18), 0 1.5px 8px 0 rgba(255,255,255,0.12) inset;
+            backdrop-filter: blur(8px);
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
+            cursor: pointer;
+            margin-bottom: 2em;
+            letter-spacing: 0.03em;
+        }
+        .error-btn-404:hover, .error-btn-404:focus {
+            background: #2784fd;
+            color: #fff;
+            box-shadow: 0 12px 32px 0 #2784fd99, 0 2px 12px 0 #fff2 inset;
+            border: 1.5px solid #fff;
+        }
+        .error-contact-404 {
+            font-size: 1.08rem;
+            color: #e3e9ff;
+            margin-top: 1.5em;
+            background: rgba(39, 132, 253, 0.18);
+            border-radius: 12px;
+            padding: 1em 2em;
+            display: inline-block;
+            box-shadow: 0px 0px 15px #2784fd44;
+            font-weight: 500;
+        }
+        .error-contact-404 a {
+            color: #2784fd;
+            text-decoration: underline;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+        .error-contact-404 a:hover {
+            color: #fff;
+            text-shadow: 0 0 8px #2784fd;
+        }
+        @media (max-width: 600px) {
+            .error-title-404 { font-size: 2.7rem; }
+            .error-desc-404 { font-size: 1.1rem; }
+            .error-btn-404 { font-size: 1rem; padding: 0.8em 1.2em; }
+            .center-container-404 { padding: 0 10px; }
+        }
     </style>
-    <script src="scripts/index.js"></script> 
-  </body>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="center-container-404">
+        <div class="error-title-404">404</div>
+        <div class="error-desc-404">
+            Lost in the cityscape.<br>
+            The page you’re looking for doesn’t exist.
+        </div>
+        <a href="index.html" class="error-btn-404">← Back to Home</a>
+        <div class="error-contact-404">
+            Need help or want to connect?<br>
+            <a href="mailto:web.codewhite@gmail.com">web.codewhite@gmail.com</a>
+        </div>
+    </div>
+</body>
 </html>

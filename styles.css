@@ -9,6 +9,10 @@ body {
     background-color: #87CEEB;
     -webkit-overflow-scrolling: touch;
     touch-action: pan-x; 
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .content {
@@ -19,6 +23,10 @@ body {
     overflow-x: auto; 
     overflow-y: hidden; 
     scrollbar-width: thin;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .content::-webkit-scrollbar {
