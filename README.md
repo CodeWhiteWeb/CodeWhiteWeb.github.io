@@ -3,12 +3,12 @@
 Welcome to my portfolio website!  
 A unique, horizontally scrolling cityscape with parallax effects, built to showcase creativity, skills, and projects in a visually stunning way.
 
-> **Live Demo:** [https://CodeWhiteWeb.thedev.id](https://CodeWhiteWeb.thedev.id)
+> **Live Demo:** [https://SajagIN.thedev.id](https://SajagIN.thedev.id)
 
-![GitHub stars](https://img.shields.io/github/stars/CodeWhiteWeb/CodeWhiteWeb.github.io) 
-![GitHub forks](https://img.shields.io/github/forks/CodeWhiteWeb/CodeWhiteWeb.github.io)
-[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/CodeWhiteWeb/CodeWhiteWeb.github.io/commits/master)
-[![Website shields.io](https://img.shields.io/badge/website-up-yellow)](http://CodeWhiteWeb.github.io/)
+![GitHub stars](https://img.shields.io/github/stars/SajagIN/SajagIN.github.io) 
+![GitHub forks](https://img.shields.io/github/forks/SajagIN/SajagIN.github.io)
+[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/SajagIN/SajagIN.github.io/commits/master)
+[![Website shields.io](https://img.shields.io/badge/website-up-yellow)](http://SajagIN.github.io/)
 
 ---
 
@@ -27,7 +27,7 @@ A unique, horizontally scrolling cityscape with parallax effects, built to showc
 Want to build your own cityscape portfolio?  
 Check out the template I created for this website and start your own journey:
 
-👉 **[Cityscape Horizontal Website Template](https://github.com/CodeWhiteWeb/cityscape-horizontal-website-template)**
+👉 **[Cityscape Horizontal Website Template](https://github.com/SajagIN/cityscape-horizontal-website-template)**
 
 - Easy to customize
 - Modern, clean codebase
