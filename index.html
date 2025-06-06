@@ -115,64 +115,72 @@
         <!-- Skills Section -->
         <div class="section" id="Skills">
             <div class="skills-section">
-                <div class="skills-category advanced">
-                    <h2>Advanced</h2>
-                    <div class="skills-grid">
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/gnubash" alt="Bash"><span class="skill-name">Bash</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Bootstrap" alt="Bootstrap"><span class="skill-name">Bootstrap</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/CSS" alt="CSS3"><span class="skill-name">CSS3</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Express" alt="Express"><span class="skill-name">Express</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Git" alt="Git"><span class="skill-name">Git</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/GraphQL" alt="GraphQL"><span class="skill-name">GraphQL</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/HTML5" alt="HTML5"><span class="skill-name">HTML5</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/JavaScript" alt="JavaScript"><span class="skill-name">JavaScript</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://www.svgrepo.com/show/452234/java.svg" alt="java"><span class="skill-name">Java</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/MongoDB" alt="MongoDB"><span class="skill-name">MongoDB</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/nodedotjs" alt="Nodejs"><span class="skill-name">Nodejs</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Python" alt="Python"><span class="skill-name">Python</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Sass" alt="Sass"><span class="skill-name">Sass</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/SQLite" alt="SQLite"><span class="skill-name">SQLite</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/TailwindCSS" alt="TailwindCSS"><span class="skill-name">TailwindCSS</span></div>
-                    </div>
+                <!-- Skill Category Buttons (Mobile Only) -->
+                <div class="skills-category-tabs">
+                    <button class="skills-tab-btn active" data-category="advanced">Advanced</button>
+                    <button class="skills-tab-btn" data-category="intermediate">Intermediate</button>
+                    <button class="skills-tab-btn" data-category="beginner">Beginner</button>
                 </div>
-                <div class="skills-category intermediate">
-                    <h2>Intermediate</h2>
-                    <div class="skills-grid">
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/angular" alt="AngularJS"><span class="skill-name">AngularJS</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/amazonwebservices" alt="AWS"><span class="skill-name">AWS</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/backbonedotjs" alt="BackboneJS"><span class="skill-name">BackboneJS</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/CoffeeScript" alt="CoffeeScript"><span class="skill-name">CoffeeScript</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Django" alt="Django"><span class="skill-name">Django</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Electron" alt="Electron"><span class="skill-name">Electron</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Firebase" alt="Firebase"><span class="skill-name">Firebase</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/MySQL" alt="MySQL"><span class="skill-name">MySQL</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/nextdotjs" alt="NextJS"><span class="skill-name">NextJS</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Nginx" alt="Nginx"><span class="skill-name">Nginx</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/pug" alt="pug"><span class="skill-name">PUG</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Pytorch" alt="Pytorch"><span class="skill-name">PyTorch</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/React" alt="React"><span class="skill-name">React</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Ruby" alt="Ruby"><span class="skill-name">Ruby</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/tensorflow" alt="tensorflow"><span class="skill-name">Tensorflow</span></div>
+                <div class="skills-categories-wrapper">
+                    <div class="skills-category advanced" id="skills-advanced">
+                        <h2>Advanced</h2>
+                        <div class="skills-grid">
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/gnubash" alt="Bash"><span class="skill-name">Bash</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Bootstrap" alt="Bootstrap"><span class="skill-name">Bootstrap</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/CSS" alt="CSS3"><span class="skill-name">CSS3</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Express" alt="Express"><span class="skill-name">Express</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Git" alt="Git"><span class="skill-name">Git</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/GraphQL" alt="GraphQL"><span class="skill-name">GraphQL</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/HTML5" alt="HTML5"><span class="skill-name">HTML5</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/JavaScript" alt="JavaScript"><span class="skill-name">JavaScript</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://img.icons8.com/?size=100&id=2572" alt="java"><span class="skill-name">Java</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/MongoDB" alt="MongoDB"><span class="skill-name">MongoDB</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/nodedotjs" alt="Nodejs"><span class="skill-name">Nodejs</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Python" alt="Python"><span class="skill-name">Python</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Sass" alt="Sass"><span class="skill-name">Sass</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/SQLite" alt="SQLite"><span class="skill-name">SQLite</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/TailwindCSS" alt="TailwindCSS"><span class="skill-name">TailwindCSS</span></div>
+                        </div>
                     </div>
-                </div>
-                <div class="skills-category beginner">
-                    <h2>Beginner</h2>
-                    <div class="skills-grid">
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Babel" alt="Babel"><span class="skill-name">Babel</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Blender" alt="Blender"><span class="skill-name">Blender</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Docker" alt="Docker"><span class="skill-name">Docker</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Figma" alt="Figma"><span class="skill-name">Figma</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/vuedotjs" alt="Vuejs"><span class="skill-name">Vuejs</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Framer" alt="Framer"><span class="skill-name">Framer</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/MariaDB" alt="MariaDB"><span class="skill-name">MariaDB</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/NestJS" alt="NestJS"><span class="skill-name">NestJS</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/nuxt" alt="Nuxtjs"><span class="skill-name">Nuxtjs</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/PostgreSQL" alt="PostgreSQL"><span class="skill-name">PostgreSQL</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Postman" alt="Postman"><span class="skill-name">Postman</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Redis" alt="Redis"><span class="skill-name">Redis</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Redux" alt="Redux"><span class="skill-name">Redux</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Svelte" alt="Svelte"><span class="skill-name">Svelte</span></div>
-                        <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Vuetify" alt="Vuetify"><span class="skill-name">Vuetify</span></div>
+                    <div class="skills-category intermediate" id="skills-intermediate">
+                        <h2>Intermediate</h2>
+                        <div class="skills-grid">
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/angular" alt="AngularJS"><span class="skill-name">AngularJS</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://img.icons8.com/?size=100&id=VoXRGxL3ekkk" alt="AWS"><span class="skill-name">AWS</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/backbonedotjs" alt="BackboneJS"><span class="skill-name">BackboneJS</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/CoffeeScript" alt="CoffeeScript"><span class="skill-name">CoffeeScript</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Django" alt="Django"><span class="skill-name">Django</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Electron" alt="Electron"><span class="skill-name">Electron</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Firebase" alt="Firebase"><span class="skill-name">Firebase</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/MySQL" alt="MySQL"><span class="skill-name">MySQL</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/nextdotjs" alt="NextJS"><span class="skill-name">NextJS</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Nginx" alt="Nginx"><span class="skill-name">Nginx</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/pug" alt="pug"><span class="skill-name">PUG</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Pytorch" alt="Pytorch"><span class="skill-name">PyTorch</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/React" alt="React"><span class="skill-name">React</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Ruby" alt="Ruby"><span class="skill-name">Ruby</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/tensorflow" alt="tensorflow"><span class="skill-name">Tensorflow</span></div>
+                        </div>
+                    </div>
+                    <div class="skills-category beginner" id="skills-beginner">
+                        <h2>Beginner</h2>
+                        <div class="skills-grid">
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Babel" alt="Babel"><span class="skill-name">Babel</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Blender" alt="Blender"><span class="skill-name">Blender</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Docker" alt="Docker"><span class="skill-name">Docker</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Figma" alt="Figma"><span class="skill-name">Figma</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/vuedotjs" alt="Vuejs"><span class="skill-name">Vuejs</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Framer" alt="Framer"><span class="skill-name">Framer</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/MariaDB" alt="MariaDB"><span class="skill-name">MariaDB</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/NestJS" alt="NestJS"><span class="skill-name">NestJS</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/nuxt" alt="Nuxtjs"><span class="skill-name">Nuxtjs</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/PostgreSQL" alt="PostgreSQL"><span class="skill-name">PostgreSQL</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Postman" alt="Postman"><span class="skill-name">Postman</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Redis" alt="Redis"><span class="skill-name">Redis</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Redux" alt="Redux"><span class="skill-name">Redux</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Svelte" alt="Svelte"><span class="skill-name">Svelte</span></div>
+                            <div class="skill-icon"><img loading="lazy" src="https://cdn.simpleicons.org/Vuetify" alt="Vuetify"><span class="skill-name">Vuetify</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -205,5 +213,34 @@
     </div>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    if (window.innerWidth <= 768) {
+        const tabs = document.querySelectorAll('.skills-tab-btn');
+        const categories = {
+            advanced: document.getElementById('skills-advanced'),
+            intermediate: document.getElementById('skills-intermediate'),
+            beginner: document.getElementById('skills-beginner')
+        };
+        function showCategory(cat) {
+            Object.keys(categories).forEach(key => {
+                if (key === cat) {
+                    categories[key].style.display = '';
+                } else {
+                    categories[key].style.display = 'none';
+                }
+            });
+            tabs.forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.category === cat);
+            });
+        }
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => showCategory(tab.dataset.category));
+        });
+        // Show only advanced by default
+        showCategory('advanced');
+    }
+});
+</script>
 </body>
 </html>

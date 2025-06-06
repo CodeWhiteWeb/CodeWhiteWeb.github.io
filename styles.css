@@ -828,11 +828,13 @@ h2 {
         min-width: 320px;
         max-width: 340px;
         width: 90vw;
-        margin: 0 10px;
-        display: inline-block;
-        vertical-align: top;
+        margin: 0 10px; /* Kept original horizontal margin */
+        display: flex;          /* Changed from inline-block */
+        flex-direction: column; /* To manage h2 and skills-grid as flex items */
         white-space: normal;
         padding: 10px 0;
+        max-height: 70vh; /* Allow category to take up to 70% of viewport height */
+        overflow-y: auto; /* Enable vertical scroll if content exceeds max-height */
     }
     .skills-grid {
         display: grid;
@@ -840,7 +842,7 @@ h2 {
         gap: 15px;
         padding: 10px 0;
         min-height: unset;
-        overflow: visible;
+        /* overflow: visible; /* Removed, as it's the default and parent (.skills-category) handles scrolling. */
         width: 100%;
     }
     .skill-icon {
@@ -898,8 +900,108 @@ h2 {
 }
 
 
+/* --- Skills Category Tabs (Mobile Only) --- */
+@media (max-width: 768px) {
+    .skills-category-tabs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+        width: 100%;
+        background: none;
+    }
+    .skills-tab-btn {
+        flex: 1 1 0;
+        padding: 0.85em 0.5em;
+        font-size: 0.98rem;
+        font-weight: 700;
+        border: 1.5px solid rgba(255,255,255,0.18);
+        border-radius: 18px;
+        background: rgba(255,255,255,0.10);
+        color: #fff;
+        cursor: pointer;
+        transition: background 0.18s, color 0.18s, box-shadow 0.18s, border 0.18s;
+        outline: none;
+        letter-spacing: 0.01em;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12), 0 1.5px 8px 0 rgba(255,255,255,0.10) inset;
+        margin: 0;
+        min-width: 0;
+        text-align: center;
+    }
+    .skills-tab-btn.active,
+    .skills-tab-btn:active,
+    .skills-tab-btn:focus {
+        background: rgba(255,255,255,0.22);
+        color: #fff;
+        border: 1.5px solid #fff;
+        box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.18), 0 2px 12px 0 rgba(255,255,255,0.18) inset;
+    }
+    .skills-categories-wrapper {
+        width: 100%;
+    }
+    .skills-category {
+        display: none;
+        width: 100%;
+        margin: 0;
+        max-width: 100%;
+    }
+    .skills-category[style*="display: block"], 
+    .skills-category[style*="display: flex"], 
+    .skills-category[style=""], 
+    .skills-category.advanced {
+        display: block;
+    }
+    .skills-category h2 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-size: 1.1rem;
+        text-align: center;
+        letter-spacing: 0.01em;
+    }
+}
+
+/* Restore desktop styles for skills-section and skills-category */
 @media (min-width: 769px) {
-    .skills-scroll-arrow {
+    .skills-category-tabs {
         display: none !important;
+    }
+    .skills-categories-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        width: 100%;
+    }
+    .skills-category {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        text-align: center;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+        border: none;
+        max-height: none;
+        overflow: visible;
+    }
+    .skills-category h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: white;
+        text-align: center;
+        letter-spacing: 0.01em;
+    }
+    .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 20px;
+        padding-top: 20px;
+        min-height: 300px;
+        width: 100%;
     }
 }
