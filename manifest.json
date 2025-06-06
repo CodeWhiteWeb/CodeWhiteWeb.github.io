@@ -1,0 +1,21 @@
+{
+  "name": "Sajag Kamthan Portfolio",
+  "short_name": "SajagIN",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#87CEEB",
+  "theme_color": "#87CEEB",
+  "description": "Portfolio and projects of Sajag Kamthan, Full Stack Developer, Programmer & Creator.",
+  "icons": [
+    {
+      "src": "images/fav.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "images/metapic.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

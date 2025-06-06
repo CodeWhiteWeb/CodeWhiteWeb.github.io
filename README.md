@@ -1,28 +1,58 @@
-# 🌆 Horizontal Endless Cityscape Parallax Portfolio
+# 🌆 My Cityscape Parallax Portfolio
 
-Welcome to my portfolio website!  
-A unique, horizontally scrolling cityscape with parallax effects, built to showcase creativity, skills, and projects in a visually stunning way.
+Welcome to the official repository for my interactive, horizontally scrolling cityscape portfolio! This project showcases my work as a **Full Stack Developer** and is designed to inspire, attract collaborators, and help others build their own creative portfolios.
 
-> **Live Demo:** [https://SajagIN.thedev.id](https://SajagIN.thedev.id)
+> **🌐 Live Demo:** [https://SajagIN.thedev.id](https://SajagIN.thedev.id)
 
-![GitHub stars](https://img.shields.io/github/stars/SajagIN/SajagIN.github.io) 
-![GitHub forks](https://img.shields.io/github/forks/SajagIN/SajagIN.github.io)
+[![GitHub stars](https://img.shields.io/github/stars/SajagIN/SajagIN.github.io)](https://github.com/SajagIN/SajagIN.github.io/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/SajagIN/SajagIN.github.io)](https://github.com/SajagIN/SajagIN.github.io/network/members)
 [![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/SajagIN/SajagIN.github.io/commits/master)
-[![Website shields.io](https://img.shields.io/badge/website-up-yellow)](http://SajagIN.github.io/)
+[![Website shields.io](https://img.shields.io/badge/website-up-yellow)](https://SajagIN.thedev.id/)
+
+---
+
+## 🚀 Why This Portfolio Stands Out
+
+- **Unique Horizontal Parallax:** Experience a modern, endless cityscape with smooth horizontal scrolling and multi-layered parallax backgrounds.
+- **SEO Optimized:** Built with best practices—meta tags, sitemap, robots.txt, manifest, and structured data for maximum discoverability.
+- **Mobile-First & Responsive:** Looks stunning on all devices, from desktops to smartphones.
+- **Showcases Real Projects:** Explore my skills, completed projects, and client testimonials.
+- **Open Source & Customizable:** Use this as a template for your own creative portfolio!
 
 ---
 
 ## ✨ Features
 
-- **Horizontal Scroll:** Navigate through sections with smooth horizontal scrolling.
-- **Endless Parallax Cityscape:** Multi-layered cityscape background with seamless parallax animation.
-- **Responsive Design:** Looks great on desktop and mobile devices.
+- **Animated UI:** Subtle, interactive animations for a lively user experience.
 - **Modern Portfolio Sections:** About, Skills, Projects, and Contact—all in one place.
-- **Animated UI:** Subtle animations and interactive elements for a lively experience.
+- **Fast Loading:** Optimized images and code for quick performance.
+- **Contact Form:** Easy way for visitors to reach out or collaborate.
+- **PWA Ready:** Installable on mobile devices for a native app feel.
 
 ---
 
-## 🚀 Use This Template
+## 🛠️ Tech Stack
+
+- **HTML5, CSS3, JavaScript**
+- Custom parallax engine (no heavy frameworks)
+- Responsive, mobile-first design
+
+---
+
+## 📁🗂️ Project Structure & File Overview
+
+- 📝 **index.html**, **styles.css**, **script.js**: Main website code for layout, styling, and interactivity.
+- 🖼️ **assets/**: All images, icons, parallax backgrounds, and SVGs.
+- 📱 **manifest.json**, 🤖 **robots.txt**, 🗺️ **sitemap.xml**: SEO and PWA support. These files help search engines index your site, enable installability, and improve discoverability.
+- 🚫 **404.html**, **404.md**: Custom 404 error page for a better user experience and proper routing on GitHub Pages.
+- 🌐 **CNAME**: Custom domain configuration for GitHub Pages.
+- 📄 **LICENSE**: Project license (MIT).
+- 📘 **README.md**: This documentation file.
+- 🔍 **google*.html**: Google Search Console verification file for site ownership.
+
+---
+
+## 📦 How to Use This Template
 
 Want to build your own cityscape portfolio?  
 Check out the template I created for this website and start your own journey:
@@ -35,11 +65,16 @@ Check out the template I created for this website and start your own journey:
 
 ---
 
-## 🛠️ Tech Stack
+## 👨‍💻 About Me
 
-- **HTML5, CSS3, JavaScript**
-- Custom parallax engine (no heavy frameworks)
-- Responsive, mobile-first design
+I'm **Sajag Kamthan**, a passionate Full Stack Developer from India, constantly exploring new skills—from web and app development to machine learning and game creation. I love building creative, user-focused digital experiences.
+
+- [Portfolio Website](https://SajagIN.thedev.id)
+- [GitHub](https://github.com/sajagin)
+- [LinkedIn](https://linkedin.com/in/sajagin)
+- [LeetCode](https://leetcode.com/sajagin)
+- [Twitter/X](https://twitter.com/sajagin)
+<!-- - [Instagram](https://instagram.com/) -->
 
 ---
 
@@ -52,8 +87,8 @@ Feel free to reach out via the contact form on the website or email:
 
 ## 📄 License
 
-This project is licensed under the MIT License. See the [LICENSE.md](./LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 ---
 
-:star: If you like this project, please consider starring the repo!
+:star: If you like this project, please consider starring the repo and sharing it with others!
