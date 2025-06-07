@@ -25,7 +25,7 @@
     <meta property="twitter:image" content="./assets/metapic.avif" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap');
     </style>
     <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
     <link rel="canonical" href="https://SajagIN.thedev.id/" />
@@ -123,28 +123,28 @@
                         <div class="about-buttons">
                             <a href="resume.pdf" download class="about-btn download-btn">
                                 Download Resume
-                                <img class="download-icon" src="assets/icons/download_file.avif" alt="Download" />
+                                <img loading="lazy" class="download-icon" src="assets/icons/download_file.avif" alt="Download" />
                             </a>
                             <a href="./ShowCase" target="_blank" class="about-btn">
                                 My Projects
-                                <img class="download-icon" src="assets/icons/newtab.avif" alt="newtab" />
+                                <img loading="lazy" class="download-icon" src="assets/icons/newtab.avif" alt="newtab" />
                             </a>
                         </div>
                         <div class="about-socials">
                             <a href="https://github.com/sajagin" class="about-social-btn" target="_blank" rel="noopener" title="GitHub">
-                                <img src="assets/socials/github.avif" alt="GitHub" />
+                                <img loading="lazy" src="assets/socials/github.avif" alt="GitHub" />
                             </a>
                             <a href="https://leetcode.com/sajagin" class="about-social-btn" target="_blank" rel="noopener" title="LeetCode">
-                                <img src="assets/socials/leetcode.avif" alt="LeetCode" />
+                                <img loading="lazy" src="assets/socials/leetcode.avif" alt="LeetCode" />
                             </a>
                             <a href="https://instagram.com/sajagin" class="about-social-btn" target="_blank" rel="noopener" title="Instagram">
-                                <img src="assets/socials/instagram.avif" alt="Instagram" />
+                                <img loading="lazy" src="assets/socials/instagram.avif" alt="Instagram" />
                             </a>
                             <a href="https://twitter.com/sajagin" class="about-social-btn" target="_blank" rel="noopener" title="Twitter">
-                                <img src="assets/socials/x.avif" alt="Twitter" />
+                                <img loading="lazy" src="assets/socials/x.avif" alt="Twitter" />
                             </a>
                             <a href="https://linkedin.com/in/sajagin" class="about-social-btn" target="_blank" rel="noopener" title="LinkedIn">
-                                <img src="assets/socials/linkedin.avif" alt="LinkedIn" />
+                                <img loading="lazy" src="assets/socials/linkedin.avif" alt="LinkedIn" />
                             </a>
                         </div>
                     </div>
@@ -251,35 +251,5 @@
         </div> -->
     </div>
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script>
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    if (window.innerWidth <= 768) {
-        const tabs = document.querySelectorAll('.skills-tab-btn');
-        const categories = {
-            advanced: document.getElementById('skills-advanced'),
-            intermediate: document.getElementById('skills-intermediate'),
-            beginner: document.getElementById('skills-beginner')
-        };
-        function showCategory(cat) {
-            Object.keys(categories).forEach(key => {
-                if (key === cat) {
-                    categories[key].style.display = '';
-                } else {
-                    categories[key].style.display = 'none';
-                }
-            });
-            tabs.forEach(tab => {
-                tab.classList.toggle('active', tab.dataset.category === cat);
-            });
-        }
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => showCategory(tab.dataset.category));
-        });
-        // Show only advanced by default
-        showCategory('advanced');
-    }
-});
-</script>
 </body>
 </html>

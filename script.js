@@ -107,3 +107,32 @@ function matchBoxHeights() {
 
 window.addEventListener("load", matchBoxHeights);
 window.addEventListener("resize", matchBoxHeights);
+
+// Mobile Skills Tabs Logic (moved from index.html)
+document.addEventListener("DOMContentLoaded", function() {
+    if (window.innerWidth <= 768) {
+        const tabs = document.querySelectorAll('.skills-tab-btn');
+        const categories = {
+            advanced: document.getElementById('skills-advanced'),
+            intermediate: document.getElementById('skills-intermediate'),
+            beginner: document.getElementById('skills-beginner')
+        };
+        function showCategory(cat) {
+            Object.keys(categories).forEach(key => {
+                if (key === cat) {
+                    categories[key].style.display = '';
+                } else {
+                    categories[key].style.display = 'none';
+                }
+            });
+            tabs.forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.category === cat);
+            });
+        }
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => showCategory(tab.dataset.category));
+        });
+        // Show only advanced by default
+        showCategory('advanced');
+    }
+});
