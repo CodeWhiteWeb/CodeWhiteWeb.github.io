@@ -151,10 +151,11 @@ document.addEventListener("DOMContentLoaded", function() {
     function initMatchBoxHeights() {
         if (!statBox || !aboutBox) return;
 
-        matchAndSetHeights(); // Initial call
+        // Initial call on DOMContentLoaded might be too early if images/fonts inside affect scrollHeight.
+        // Rely on 'load' for the first accurate sizing.
+        // matchAndSetHeights(); 
 
         window.addEventListener("resize", matchAndSetHeights);
-        // Use 'load' to ensure images within boxes are loaded and heights are final
         window.addEventListener("load", matchAndSetHeights);
     }
 

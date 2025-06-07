@@ -254,6 +254,7 @@ body,
     word-wrap: break-word;
     overflow-wrap: break-word;
     overflow: hidden;
+    min-height: 450px; /* Reserve space to reduce CLS */
 }
 
 .stat-item {
