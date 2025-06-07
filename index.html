@@ -26,12 +26,11 @@
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!--thank you ChatGPT for your help :sob: -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJbecmNE.woff2" as="font" type="font/woff2" crossorigin> <!-- Poppins Regular 400 (Example URL) -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2" as="font" type="font/woff2" crossorigin> <!-- Poppins Bold 700 (Example URL) -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Syne:wght@400;600;700;800&display=swap"></noscript>
-    <link rel="stylesheet" href="styles.css"> <!-- Load CSS synchronously -->
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="font.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <noscript><link rel="stylesheet" href="font.css"></noscript>
+
     <link rel="canonical" href="https://SajagIN.thedev.id/" />
     <script type="application/ld+json">
     {
@@ -252,6 +251,6 @@
             <p>This is a section of the page.</p>
         </div> -->
     </div>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
