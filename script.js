@@ -8,12 +8,12 @@ if (!isMobile) {
 
     const ctx = canvas.getContext('2d');
     const layers = [
-        { src: 'assets/city_parallax/1.png', speed: 0.1, img: new Image() },
-        { src: 'assets/city_parallax/2.png', speed: 0.2, img: new Image() },
-        { src: 'assets/city_parallax/3.png', speed: 0.3, img: new Image() },
-        { src: 'assets/city_parallax/4.png', speed: 0.4, img: new Image() },
-        { src: 'assets/city_parallax/5.png', speed: 0.5, img: new Image() },
-        { src: 'assets/city_parallax/6.png', speed: 0.6, img: new Image() }
+        { src: 'assets/city_parallax/1.avif', speed: 0.1, img: new Image() },
+        { src: 'assets/city_parallax/2.avif', speed: 0.2, img: new Image() },
+        { src: 'assets/city_parallax/3.avif', speed: 0.3, img: new Image() },
+        { src: 'assets/city_parallax/4.avif', speed: 0.4, img: new Image() },
+        { src: 'assets/city_parallax/5.avif', speed: 0.5, img: new Image() },
+        { src: 'assets/city_parallax/6.avif', speed: 0.6, img: new Image() }
     ];
 
     let loaded = 0;
@@ -85,14 +85,14 @@ if (isMobile) {
     content.addEventListener("touchstart", (e) => {
         startX = e.touches[0].pageX - content.offsetLeft;
         scrollLeft = content.scrollLeft;
-    });
+    }, { passive: true });
 
     content.addEventListener("touchmove", (e) => {
         e.preventDefault(); 
         const x = e.touches[0].pageX - content.offsetLeft;
         const walk = (x - startX) * 2;
         content.scrollLeft = scrollLeft - walk;
-    });
+    }, { passive: false });
 }
 
 function matchBoxHeights() {
