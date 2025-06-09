@@ -41,7 +41,7 @@ Welcome to the official repository for my interactive, horizontally scrolling ci
 
 ## 📁🗂️ Project Structure & File Overview
 
-- 📝 **index.html**, **styles.css**, **script.js**: Main website code for layout, styling, and interactivity.
+- 📝 **index.html**, **styles/**, **script.js**: Main website code for layout, styling, and interactivity.
 - 🖼️ **assets/**: All images, icons, parallax backgrounds, and SVGs.
 - 📱 **manifest.json**, 🤖 **robots.txt**, 🗺️ **sitemap.xml**: SEO and PWA support. These files help search engines index your site, enable installability, and improve discoverability.
 - 🚫 **404.html**, **404.md**: Custom 404 error page for a better user experience and proper routing on GitHub Pages.
