@@ -790,16 +790,26 @@ h2 {
     .parallax-layer {
         display: none;
     }
+    .scroll-hint {
+        display: none;
+    }
     body {
         background-image: url('/assets/city_parallax/10.avif');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        
         overflow-y: auto;
+        overflow-x: hidden; /* Ensure no horizontal scroll on body */
+        touch-action: pan-y; /* Optimize for vertical touch scrolling */
     }
     .content {
-        scroll-snap-type: x mandatory;
+        display: block;      /* Stack sections vertically */
+        height: auto;        /* Height determined by content */
+        overflow-x: hidden;  /* No horizontal scrolling for the content wrapper */
+        overflow-y: visible; /* Content flows vertically, body scrolls */
+        white-space: normal; /* Default wrapping behavior */
+        scroll-snap-type: none; /* Disable horizontal snapping */
+        will-change: unset;  /* No transform animation expected */
     }
     .section {
         scroll-snap-align: start;
@@ -809,8 +819,11 @@ h2 {
         width: 100%;
         box-sizing: border-box;
         overflow-x: hidden; /* Prevent horizontal overflow */
-        overflow-y: visible; /* Allow vertical content to flow if section grows taller than viewport */        min-width: 100vw;
-        max-width: 100vw;
+        overflow-y: visible; /* Allow vertical content to flow if section grows taller than viewport */
+        /* min-width: 100vw; Removed, width: 100% is sufficient and safer */
+        /* max-width: 100vw; Removed, width: 100% is sufficient and safer */
+        flex: none; /* Sections are no longer flex items in a row */
+        scroll-snap-align: none; /* No horizontal snapping for sections */
     }
     .stats-about-container {
         flex-direction: column;
@@ -921,19 +934,20 @@ h2 {
         white-space: normal;
     }
     
+    /* Revised #Skills.section for mobile to support vertical stacking of title, tabs, and content */
     #Skills.section {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: center !important;
-        overflow-x: auto !important;
-        overflow-y: hidden !important;
-        height: 100vh;
-        min-height: 100vh;
-        width: 100vw;
-        position: relative;
-        max-width: 100vw;
-        white-space: nowrap;
+        display: flex;
+        flex-direction: column; /* Stack title, tabs, content vertically */
+        align-items: center;   /* Center children horizontally */
+        justify-content: flex-start; /* Align content to the top */
+        height: auto;          /* Allow section height to grow with content */
+        min-height: 100vh;     /* Ensure it takes at least full viewport height */
+        width: 100%;           /* Full width */
+        box-sizing: border-box;
+        padding-top: 30px;     /* Add some top padding for the title */
+        padding-bottom: 30px;  /* Bottom padding */
+        overflow-x: hidden;    /* No horizontal scroll for the section itself */
+        overflow-y: visible;   /* Allow vertical overflow, body scrolls */
     }
     .skills-section {
         position: relative;
@@ -941,38 +955,35 @@ h2 {
         align-items: center;
         justify-content: center;
         min-height: 320px;
-        height: auto;
-        max-height: 80vh;
         display: flex;
-        flex-direction: row;
-        gap: 24px;
-        width: max-content;
-        min-width: 100vw;
-        max-width: none;
-        overflow-x: auto;
-        overflow-y: hidden;
+        flex-direction: column; /* Stack tabs and categories-wrapper vertically */
+        width: 100%;            /* Take full width of parent */
+        box-sizing: border-box;
         padding: 10px 0;
-        white-space: nowrap;
+        margin: 0;
+        height: auto;           /* Allow height to be determined by content */
     }
     .skills-category {
         min-width: 320px;
         max-width: 340px;
         width: 90vw;
         margin: 0 10px;
-        
         flex-direction: column;
         white-space: normal;
         padding: 10px 0;
-        max-height: 70vh;
-        overflow-y: auto;
+        /* max-height: 70vh; Removed to allow page scroll */
+        /* overflow-y: auto; Removed to allow page scroll */
+        overflow-x: hidden; /* Prevent any accidental horizontal overflow within a category */
+        box-sizing: border-box;
     }
     .skills-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 15px;
         padding: 10px 0;
-        min-height: unset;
+        min-height: unset; /* Already has overflow:hidden from shared liquid glass style */
         width: 100%;
+        box-sizing: border-box;
     }
     .skill-icon {
         width: 45px;
@@ -982,52 +993,7 @@ h2 {
         
     }
     
-    .skills-scroll-arrow {
-        display: flex;
-        position: fixed;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 100;
-        width: 54px;
-        height: 54px;
-        background: linear-gradient(135deg, #268fff 60%, #2784fd 100%);
-        border: none;
-        border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 0 16px 4px #268fff, 0 0 32px 8px #fff3;
-        cursor: pointer;
-        color: #fff;
-        font-size: 2.2rem;
-        opacity: 0.93;
-        transition: background 0.2s, box-shadow 0.2s, opacity 0.2s;
-        pointer-events: auto;
-        outline: none;
-        -webkit-tap-highlight-color: transparent;
-    }
-    .skills-scroll-arrow.left {
-        left: 8px;
-        border-radius: 0 27px 27px 0 / 0 50% 50% 0;
-        justify-content: flex-start;
-        background: linear-gradient(135deg, #2784fd 60%, #268fff 100%);
-    }
-    .skills-scroll-arrow.right {
-        right: 8px;
-        border-radius: 27px 0 0 27px / 50% 0 0 50%;
-        justify-content: flex-end;
-        background: linear-gradient(225deg, #2784fd 60%, #268fff 100%);
-    }
-    .skills-scroll-arrow svg {
-        width: 28px;
-        height: 28px;
-        filter: drop-shadow(0 0 6px #fff);
-        display: block;
-    }
-    .skills-scroll-arrow:active {
-        opacity: 1;
-        background: #1a6ed8;
-    }
-    
+    /* Removed .skills-scroll-arrow styles as they are not used in the mobile tabbed UI */
     
     .skills-category-tabs {
         display: flex;
@@ -1071,7 +1037,7 @@ h2 {
         display: none;
         width: 100%;
         margin: 0;
-        max-width: 100%;
+        max-width: 100%; /* Ensure category takes full width of its wrapper */
     }
     .skills-category[style*="display: block"],
     .skills-category[style*="display: flex"],

@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // --- Content Scrolling (Mouse & Touch) ---
     function initContentScrolling() {
-        if (!content) return;
+        if (isMobile || !content) return; // Prevent initialization on mobile
 
         let isDragging = false;
         let startX, scrollLeftInitial;
