@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (isVisible) {
                 closeModal();
             } else {
-                openModal('./404.html'); 
+                openModal('https://sajagin.thedev.id/EYEs'); 
             }
         });
 
