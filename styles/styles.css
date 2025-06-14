@@ -32,7 +32,7 @@ body,
 }
 
 .content::-webkit-scrollbar {
-    height: 8px; 
+    height: 8px;
 }
 
 .content::-webkit-scrollbar-thumb {
@@ -158,7 +158,7 @@ body,
 .home-text-content {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; 
+    align-items: flex-end;
     
     flex: 1;
     min-width: 0;
@@ -221,10 +221,10 @@ body,
 .stats-about-container {
     display: flex;
     justify-content: space-around;
-    align-items: stretch; 
+    align-items: stretch;
     max-width: 90%;
     margin: auto;
-    gap: 20px; 
+    gap: 20px;
     flex-wrap: nowrap;
 }
 
@@ -236,13 +236,44 @@ body,
     height: 100%;
 }
 
+/* MODIFICATION START: New Liquid Glass Style for blurred boxes */
+.stat-box,
+.about-box,
+.skills-grid,
+.contact-form,
+.home-flex-row {
+    background: rgba(255, 255, 255, 0.05); /* Softer background */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); 
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Ensure the box is a stacking context */
+}
+
+.stat-box::before,
+.about-box::before,
+.skills-grid::before,
+.contact-form::before,
+.home-flex-row::before {
+    content: '';
+    position: absolute;
+    top: -3px; /* Increased offset /
+    left: -3px; / Increased offset /
+    right: -3px; / Increased offset /
+    bottom: -3px; / Increased offset /
+    border-radius: 24px; / Further increased radius /
+    pointer-events: none;
+    / More pronounced highlight */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 60%);
+    z-index: -1;
+}
+
+/* Original styles for the boxes are below, with old glassmorphism properties removed */
 .stat-box, .about-box {
-    background: rgba(54, 54, 54, 0.2);
-    border-radius: 15px;
-    padding: 36px 32px 32px 32px; 
-    backdrop-filter: blur(5px);
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 36px 32px 32px 32px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -255,8 +286,10 @@ body,
     word-wrap: break-word;
     overflow-wrap: break-word;
     overflow: hidden;
-    min-height: 450px; /* Reserve space to reduce CLS */
+    min-height: 450px;
 }
+/* MODIFICATION END */
+
 
 .stat-item {
     display: flex;
@@ -276,12 +309,12 @@ body,
     object-fit: contain;
 }
 
-.stat-text h2 { 
-    font-size: 3rem; 
+.stat-text h2 {
+    font-size: 3rem;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 2px;
-    line-height: 1.1;
+    line-height: 1.25; /* Increased for better text rendering and to prevent clipping */
     text-transform: none;
 }
 
@@ -414,7 +447,7 @@ a {
 
 .about-title {
     font-size: 2rem;
-    font-weight: 800; 
+    font-weight: 800;
     letter-spacing: 0.01em;
     color: #fff;
     text-align: center;
@@ -492,11 +525,6 @@ h2 {
 }
 
 .skills-grid {
-    background: rgba(54, 54, 54, 0.2);
-    border-radius: 15px;
-    backdrop-filter: blur(5px);
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.318);
     flex-basis: 45%;
     flex-grow: 1;
     overflow: hidden;
@@ -566,11 +594,7 @@ h2 {
 }
 
 .contact-form {
-    background: rgba(110, 108, 108, 0.2);
-    border-radius: 15px;
     padding: 20px;
-    backdrop-filter: blur(5px);
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.4);
     width: 100%;
     max-width: 600px;
     min-width: 340px;
@@ -674,15 +698,11 @@ h2 {
 }
 
 .home-flex-row {
-    background: rgba(54, 54, 54, 0.2);
-    border-radius: 15px;
-    backdrop-filter: blur(5px);
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.318);
-    display: flexbox;
+    display: flex;
     gap: 10px;
     padding: 30px;
     overflow-block: hidden;
+    box-sizing: border-box; /* Ensure padding is included in the element's total width */
 }
 
 .home-table-layout {
@@ -724,8 +744,8 @@ h2 {
     }
     .home-flex-row {
         flex-direction: column;
-        gap: 1.5rem;
-        max-width: 100vw;
+        gap: 1.5rem; /* Adjusted from 10px for consistency with other mobile gaps */
+        width: 100%; /* Make it take full width of its parent's content box */
     }
     .home-flex-text {
         align-items: center;
@@ -788,8 +808,8 @@ h2 {
         min-height: 100vh;
         width: 100%;
         box-sizing: border-box;
-        overflow: hidden;
-        min-width: 100vw;
+        overflow-x: hidden; /* Prevent horizontal overflow */
+        overflow-y: visible; /* Allow vertical content to flow if section grows taller than viewport */        min-width: 100vw;
         max-width: 100vw;
     }
     .stats-about-container {
@@ -808,7 +828,7 @@ h2 {
         margin: 0;
         box-sizing: border-box;
         padding: 25px;
-        flex-basis: auto;
+        flex-basis: auto;        min-height: auto; /* Allow height to be determined by content on mobile */
     }
     .stat-item {
         margin-bottom: 15px;
@@ -861,8 +881,8 @@ h2 {
     .home-text-content .big-text,
     .home-text-content .small-text,
     .home-text-content .smaller-text {
-        text-align: center; 
-        width: auto;       
+        text-align: center;
+        width: auto;
     }
     .pfp {
         width: 120px;
@@ -874,7 +894,7 @@ h2 {
         margin: 10px 0;
     }
     .about-box h2 {
-        font-size: 1.75rem; 
+        font-size: 1.75rem;
     }
     p {
         white-space: normal;
@@ -943,8 +963,8 @@ h2 {
         flex-direction: column;
         white-space: normal;
         padding: 10px 0;
-        max-height: 70vh; 
-        overflow-y: auto; 
+        max-height: 70vh;
+        overflow-y: auto;
     }
     .skills-grid {
         display: grid;
