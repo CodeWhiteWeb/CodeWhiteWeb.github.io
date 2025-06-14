@@ -127,7 +127,7 @@
                             <a href="resume.pdf" download class="about-btn" role="button">
                                 Download Resume <i class="fa-solid fa-download" aria-hidden="true"></i>
                             </a>
-                            <a href="./ShowCase" target="_blank" rel="noopener noreferrer" class="about-btn" role="button">
+                            <a href="#" id="myProjectsBtn" class="about-btn" role="button">
                                 My Projects <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i>
                             </a>
                         </div>
@@ -150,6 +150,7 @@
             </div>             
         </div>
         <div class="section" id="Skills">
+            <h2 class="section-main-title">My Skill Set</h2>
             <div class="skills-section">
                 <div class="skills-category-tabs">
                     <button class="skills-tab-btn active" data-category="advanced">Advanced</button>
@@ -242,6 +243,18 @@
             </section>
         </div>
     </div>
+        <!-- Angry Eyes Toggle Button -->
+        <button id="angryEyesButton" class="angry-eyes-toggle-btn" aria-label="Toggle Angry Eyes" title="Toggle Angry Eyes">
+        &#x1F440; <!-- Eyes emoji -->
+    </button>
+
+    <!-- Fullscreen Iframe Modal -->
+    <div id="iframeBlackOverlay" class="iframe-black-overlay"></div>
+    <div id="iframeModalContainer" class="iframe-modal-container">
+        <iframe id="websiteIframe" src="./Eyes" title="Embedded Website" allowfullscreen></iframe>
+    </div>
+
+
     <script src="script.js" defer></script>
 </body>
 </html>

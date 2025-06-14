@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const isMobile = window.innerWidth <= 768;
     const content = document.querySelector('.content');
 
-    // --- Parallax Effect ---
+    
     function initParallax() {
         if (isMobile || !content) return;
 
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
             layer.img.onload = () => {
                 loadedImages++;
                 if (loadedImages === layers.length) {
-                    resizeCanvas(); // Initial draw after all images loaded
+                    resizeCanvas(); 
                 }
             };
         });
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            drawParallax(); // Redraw after resize
+            drawParallax(); 
         }
 
         function drawParallax() {
@@ -44,22 +44,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
             layers.forEach(layer => {
                 const img = layer.img;
-                if (!img.complete || img.naturalWidth === 0) return; // Skip if image not ready
+                if (!img.complete || img.naturalWidth === 0) return; 
 
                 const imgW = img.width;
                 const imgH = img.height;
                 const canvasH = canvas.height;
-                const drawH = canvasH; // Draw image to fill canvas height
-                const drawW = imgW * (drawH / imgH); // Calculate width to maintain aspect ratio
+                const drawH = canvasH; 
+                const drawW = imgW * (drawH / imgH); 
 
                 let xPosition = (-scrollX * layer.speed) % drawW;
 
-                // Ensure seamless looping for images that are narrower than the canvas width when tiled
+                
                 if (xPosition > 0) {
                     xPosition -= drawW;
                 }
 
-                const yPosition = (canvasH - drawH) / 2; // Center vertically if needed, though drawH = canvasH
+                const yPosition = (canvasH - drawH) / 2; 
 
                 for (let currentX = xPosition; currentX < canvas.width; currentX += drawW) {
                     ctx.drawImage(img, currentX, yPosition, drawW, drawH);
@@ -72,15 +72,15 @@ document.addEventListener("DOMContentLoaded", function() {
             window.requestAnimationFrame(drawParallax);
         });
 
-        // Initial call in case images were cached and loaded quickly
+        
         if (loadedImages === layers.length) {
             resizeCanvas();
         }
     }
 
-    // --- Content Scrolling (Mouse & Touch) ---
+    
     function initContentScrolling() {
-        if (isMobile || !content) return; // Prevent initialization on mobile
+        if (isMobile || !content) return; 
 
         let isDragging = false;
         let startX, scrollLeftInitial;
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         function handleDragStart(e) {
             isDragging = true;
-            // content.classList.add('is-dragging'); // Optional: for styling
+            
 
             const pageX = e.touches ? e.touches[0].pageX : e.pageX;
             startX = pageX - content.offsetLeft;
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.addEventListener('touchend', handleDragEnd);
                 document.addEventListener('touchcancel', handleDragEnd);
             } else {
-                // Prevent default drag behavior for mouse (e.g., dragging images)
+                
                 e.preventDefault();
                 document.addEventListener('mousemove', handleDragMove);
                 document.addEventListener('mouseup', handleDragEnd);
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         function handleDragMove(e) {
             if (!isDragging) return;
-            e.preventDefault(); // Crucial for touchmove to prevent browser scroll
+            e.preventDefault(); 
 
             const pageX = e.touches ? e.touches[0].pageX : e.pageX;
             const x = pageX - content.offsetLeft;
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
         function handleDragEnd() {
             if (!isDragging) return;
             isDragging = false;
-            // content.classList.remove('is-dragging'); // Optional
+            
 
             document.removeEventListener('touchmove', handleDragMove);
             document.removeEventListener('touchend', handleDragEnd);
@@ -132,13 +132,13 @@ document.addEventListener("DOMContentLoaded", function() {
         content.addEventListener("touchstart", handleDragStart, { passive: true });
     }
 
-    // --- Match Box Heights ---
+    
     const statBox = document.querySelector('.stat-box');
     const aboutBox = document.querySelector('.about-box');
 
     function matchAndSetHeights() {
         if (statBox && aboutBox) {
-            // Reset height to auto to allow natural height calculation
+            
             statBox.style.height = 'auto';
             aboutBox.style.height = 'auto';
 
@@ -151,20 +151,20 @@ document.addEventListener("DOMContentLoaded", function() {
     function initMatchBoxHeights() {
         if (!statBox || !aboutBox) return;
 
-        // Initial call on DOMContentLoaded might be too early if images/fonts inside affect scrollHeight.
-        // Rely on 'load' for the first accurate sizing.
-        // matchAndSetHeights(); 
+        
+        
+        
 
         window.addEventListener("resize", matchAndSetHeights);
         window.addEventListener("load", matchAndSetHeights);
     }
 
-    // --- Mobile Skills Tabs Logic ---
+    
     function initMobileSkillsTabs() {
         if (!isMobile) return;
 
         const tabs = document.querySelectorAll('.skills-tab-btn');
-        // Assuming categories are direct children or identifiable uniquely
+        
         const categories = {
             advanced: document.getElementById('skills-advanced'),
             intermediate: document.getElementById('skills-intermediate'),
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (!tabs.length) return;
 
-        // Filter out non-existent category elements
+        
         const validCategories = {};
         Object.keys(categories).forEach(key => {
             if (categories[key]) {
@@ -195,13 +195,13 @@ document.addEventListener("DOMContentLoaded", function() {
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
                 const categoryKey = tab.dataset.category;
-                if (validCategories[categoryKey]) { // Show only if category element exists
+                if (validCategories[categoryKey]) { 
                     showCategory(categoryKey);
                 }
             });
         });
 
-        // Show 'advanced' by default if it exists, otherwise the first available
+        
         if (validCategories.advanced) {
             showCategory('advanced');
         } else if (Object.keys(validCategories).length > 0) {
@@ -209,9 +209,136 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    
+    const mainContentElement = document.querySelector('.content'); 
+    const mainSiteOverlayElement = document.querySelector('body > .overlay'); 
+    
+
+    function initIframeModal() {
+        const toggleButton = document.getElementById('angryEyesButton'); 
+        const projectsButton = document.getElementById('myProjectsBtn'); 
+        const blackOverlay = document.getElementById('iframeBlackOverlay');
+        const iframeContainer = document.getElementById('iframeModalContainer');
+        const websiteIframe = document.getElementById('websiteIframe'); 
+
+        if (!toggleButton || !projectsButton || !blackOverlay || !iframeContainer || !websiteIframe || !mainContentElement || !mainSiteOverlayElement) {
+            console.warn('Iframe modal elements not found.');
+            return;
+        }
+
+        
+        function openModal(iframeSrc) {
+            if (websiteIframe) websiteIframe.src = iframeSrc;
+            
+            blackOverlay.style.display = 'block';
+            iframeContainer.style.display = 'block';
+            void blackOverlay.offsetWidth;
+            void iframeContainer.offsetWidth;
+
+            blackOverlay.classList.add('visible');
+            iframeContainer.classList.add('visible');
+            document.body.classList.add('iframe-modal-open');
+
+            setTimeout(() => {
+                if (iframeContainer.classList.contains('visible')) {
+                    if (mainContentElement) mainContentElement.style.display = 'none';
+                    if (mainSiteOverlayElement) mainSiteOverlayElement.style.display = 'none';
+                }
+            }, 1500); 
+        }
+
+        
+        function closeModal() {
+            if (mainContentElement) mainContentElement.style.display = isMobile ? 'block' : 'flex';
+            if (mainSiteOverlayElement) mainSiteOverlayElement.style.display = 'block';
+
+            iframeContainer.classList.remove('visible');
+            blackOverlay.classList.remove('visible');
+            document.body.classList.remove('iframe-modal-open');
+
+            setTimeout(() => {
+                if (!iframeContainer.classList.contains('visible')) {
+                    iframeContainer.style.display = 'none';
+                    blackOverlay.style.display = 'none';
+                }
+            }, 1800); 
+        }
+
+        toggleButton.addEventListener('click', () => { 
+            const isVisible = iframeContainer.classList.contains('visible');
+            if (isVisible) {
+                closeModal();
+            } else {
+                openModal('./404.html'); 
+            }
+        });
+
+        projectsButton.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            const isVisible = iframeContainer.classList.contains('visible');
+            if (isVisible) {
+                closeModal();
+            } else {
+                openModal('https://sajagin.thedev.id/ShowCase');
+            }
+        });
+    }
+
+    
+    function initKeyboardScrolling() {
+        if (isMobile || !content) return; 
+        
+        let scrollDirection = 0; // -1 for left, 1 for right, 0 for none
+        const scrollSpeed = 15; // Pixels per frame. Adjust for desired speed.
+        let animationFrameId = null;
+
+        function scrollLoop() {
+            if (scrollDirection === 0 || !content) { // Added !content check
+                animationFrameId = null; // Stop the loop
+                return;
+            }
+
+            const newScrollLeft = content.scrollLeft + (scrollDirection * scrollSpeed);
+            content.scrollLeft = Math.max(0, Math.min(newScrollLeft, content.scrollWidth - content.clientWidth));
+
+            animationFrameId = requestAnimationFrame(scrollLoop);
+        }
+
+        window.addEventListener('keydown', (event) => {
+            
+            if (document.body.classList.contains('iframe-modal-open')) {
+                return;
+            }
+            let newDirection = 0;
+            if (event.key === 'ArrowLeft') {
+                newDirection = -1;
+            } else if (event.key === 'ArrowRight') {
+                newDirection = 1;
+            } else {
+                return; 
+            }
+           if (scrollDirection !== newDirection) {
+                scrollDirection = newDirection;
+                if (!animationFrameId) { // Start loop if not already running
+                    animationFrameId = requestAnimationFrame(scrollLoop);
+                }
+            }
+            event.preventDefault(); // Prevent default browser scroll for arrow keys
+        });
+        
+        window.addEventListener('keyup', (event) => {
+            if ((event.key === 'ArrowLeft' && scrollDirection === -1) ||
+                (event.key === 'ArrowRight' && scrollDirection === 1)) {
+                scrollDirection = 0; // Stop scrolling
+            }
+        });
+    }
+
     // Initialize all functionalities
     initParallax();
     initContentScrolling();
     initMatchBoxHeights();
     initMobileSkillsTabs();
-});
+    initIframeModal(); 
+    initKeyboardScrolling(); 
+ });
