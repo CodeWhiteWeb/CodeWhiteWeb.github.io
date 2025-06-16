@@ -1237,3 +1237,96 @@ h2 {
 body.iframe-modal-open {
     overflow: hidden !important; 
 }
+
+
+/*
+  Base styles for the #angryEyesButton.
+  These are merged and adapted from the original .angry-eyes-toggle-btn
+  and the previous #angryEyesButton styles.
+*/
+#angryEyesButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px; /* Initial width for circular shape */
+  height: 50px;
+  background: rgba(255,255,255,0.10);
+  border: 1.5px solid rgba(255,255,255,0.18);
+  border-radius: 50%; /* Circular */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center icon when not expanded */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18), 0 1.5px 8px 0 rgba(255,255,255,0.12) inset;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  z-index: 3001;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  padding: 0; /* Remove padding to control inner elements precisely */
+  overflow: hidden; /* Crucial for the animation */
+  box-sizing: border-box;
+  transition: width 0.3s ease-in-out, border-radius 0.3s ease-in-out,
+              background 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+/* Container for the original button icon, ensures it stays on the right when expanded */
+#angryEyesButton .button-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: calc(50px - 3px); /* Button width - borders */
+  height: calc(50px - 3px);   /* Button height - borders */
+  font-size: 24px; /* Original icon size */
+  flex-shrink: 0; /* Prevent icon container from shrinking */
+}
+
+#angryEyesButton.expanded-emoji-button {
+  width: 230px; /* Adjusted width: ~170px for emojis + 50px for icon + padding */
+  border-radius: 25px; /* height / 2 for pill shape */
+  justify-content: flex-start; /* Align items (emoji panel, then icon) to the left */
+  background: rgba(255,255,255,0.22); /* Hover/active background */
+  border: 1.5px solid #fff; /* Hover/active border */
+  box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.22), 0 2px 12px 0 rgba(255,255,255,0.18) inset; /* Hover/active shadow */
+}
+
+/* Styles for the emoji panel (now inside the button) */
+#angryEyesButton .emoji-panel {
+  display: flex;
+  gap: 8px; /* Space between emojis */
+  align-items: center;
+  height: 100%; 
+  padding: 0 10px 0 15px; /* Left padding for spacing from edge, right for spacing from icon */
+  box-sizing: border-box;
+  user-select: none; /* Prevent text selection of emojis */
+  overflow: hidden; /* Clip content during animation */
+  white-space: nowrap; /* Prevent emojis from wrapping */
+
+  /* Define its natural max width for when it's scaled to 1 */
+  max-width: 180px; 
+
+  /* Initial state for animation */
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center; /* Animation origin from the left, crucial */
+  
+  /* Corrected transitions: ensure 'transform' is included for smooth scaling */
+  transition: opacity 0.2s ease-in-out 0.1s, /* Opacity fades in with a delay */
+              transform 0.3s ease-in-out;   /* Transform scales in/out */
+}
+
+#angryEyesButton.expanded-emoji-button .emoji-panel {
+  opacity: 1;
+  transform: scaleX(1); /* Scale to full defined max-width */
+  /* max-width is already 180px from the base style, no change needed here for it */
+}
+
+#angryEyesButton .emoji-panel span {
+  font-size: 24px; /* Adjust emoji size */
+  cursor: default; /* Or 'pointer' if emojis become interactive */
+  transition: transform 0.2s ease;
+}
+#angryEyesButton .emoji-panel span:hover {
+  transform: scale(1.2); /* Simple hover effect for emojis */
+}
